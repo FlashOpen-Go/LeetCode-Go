@@ -31,17 +31,19 @@
 ```c
 int searchInsert(int* nums, int numsSize, int target)
 {
-for (i = 0; i < numsSize; i++)
-    /* 遍历每个元素，一旦目标小于等于当前元素，说明目标正确的位置即为当前位置 */
-    if (target <= nums[i])
-        return i;
-return i;   // 大于数组内的所有元素
+    for (i = 0; i < numsSize; i++)
+    {
+        /* 遍历每个元素，一旦目标小于等于当前元素，说明目标正确的位置即为当前位置 */
+        if (target <= nums[i])
+            return i;
+    }
+    return i;   // 大于数组内的所有元素
 }
 ```
 
 ### 二分法查找
 - 因为数组是有序的，因此可以直接获取当前数组中间位置对应的数值，判断与目标数字的大小关系
-![](1.jpg)
+![](https://github.com/FlashOpen-Go/LeetCode-Go/blob/master/%E6%95%B0%E7%BB%84/%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/1.jpg)
 - 如果目标值小于中间值，则更新right位置
 ![](2.jpg)
 - 如果目标值大于中间值，则更新right位置
