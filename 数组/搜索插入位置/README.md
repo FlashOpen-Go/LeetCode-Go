@@ -43,11 +43,11 @@ int searchInsert(int* nums, int numsSize, int target)
 
 ### 二分法查找
 - 因为数组是有序的，因此可以直接获取当前数组中间位置对应的数值，判断与目标数字的大小关系
-![](./1.jpg)
+![](/img/1.jpg)
 - 如果目标值小于中间值，则更新right位置
-![](./2.jpg)
+![](/img/2.jpg)
 - 如果目标值大于中间值，则更新right位置
-![](./3.jpg)
+![](/img/3.jpg)
 - 如果相等则返回mid值
 
 #### 代码实现
