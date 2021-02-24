@@ -41,3 +41,20 @@ public:
     }
 };
 ```
+
+```Java
+class Solution {
+    public int findRepeatNumber(int[] nums) {
+        int[] nnn = new int[100000];
+		for(int i=0;i<nums.length;i++) {
+			//给nnn[nums[i]]值加1
+			nnn[nums[i]]  = nnn[nums[i]]+1;
+			//如果nnn[nums[i]]大于1，说明nums[i]出现不止一次，返回nums[i]
+			if(nnn[nums[i]]>1) {
+				return nums[i];
+			}
+		}
+		return 0;
+    }
+};
+```
