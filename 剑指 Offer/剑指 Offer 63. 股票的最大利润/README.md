@@ -21,6 +21,10 @@
 0 <= 数组长度 <= 10^5
 
 
+## 解析
+#### 方法1：
+- 实际上只需要找到数组中的两个峰值，即最小值和最大值即可。
+- 遍历数组，维护一个最小值，当遍历的元素小于最小值时更新最小值，否则则用当前的数值减去最小值
 
 ## 代码实现
 #### Java
@@ -41,6 +45,29 @@ class Solution {
             }
         }
         return res;
+    }
+};
+```
+
+#### CPP
+```C++
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int minValue = (numeric_limits<int>::max)();
+        int ret = 0;
+        for (int i = 0; i < prices.size(); i++)
+        {
+            if (minValue > prices[i])
+            {
+                minValue = prices[i];
+            }
+            else
+            {
+                ret = max(ret, prices[i] - minValue);
+            }
+        }
+        return ret;
     }
 };
 ```
