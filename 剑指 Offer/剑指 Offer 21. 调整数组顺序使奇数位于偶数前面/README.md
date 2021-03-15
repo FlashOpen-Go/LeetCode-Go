@@ -46,3 +46,30 @@ public:
     }
 };
 ```
+```Java
+class Solution {
+    public int[] exchange(int[] nums) {
+        //双指针
+		int left=0;
+		int right=nums.length-1;
+		//遍历条件
+		while(left<right) {
+			//如果左边是奇数，则跳过，向右移一位
+			while(left<right&&nums[left]%2!=0) {
+				left++;
+			}
+			//如果右边是偶数，则跳过，向左移一位
+			while(left<right&&nums[right]%2==0) {
+				right--;
+			}
+			//如果左边是偶数，右边是奇数，则兑换位置
+			if(left<right) {
+				int temp = nums[left];
+				nums[left] = nums[right];
+				nums[right] = temp;
+			}
+		}
+		return nums;
+    }
+};
+```
