@@ -43,6 +43,10 @@ n == nums.length
 - 这样从数组的最后开始查找，更新栈的同时，维护着最大值
 - 只要存在一个 nums[i] < max_value，那么一定存在一个 132 模式的数
 
+#### 方法2：单调栈
+- 维护一个最小值
+- 从数组最后开始遍历，出现大于最小值小于当前值，则存在一个132模式的数
+
 
 ## 代码实现
 #### 方法1：单调栈
@@ -64,6 +68,26 @@ public:
             st.push(nums[i]);
         }
         return false;
+    }
+};
+```
+```Java
+class Solution {
+    public boolean find132pattern(int[] nums) {
+        int len=nums.length;
+		int min = nums[0];
+		for(int i=0;i<nums.length;i++) {
+			min = Math.min(min, nums[i]);//找到最小值
+			if(min==nums[i]) {//如果min==nums[i]则当前值等于最小值，跳过
+				continue;
+			}
+			for(int j=len-1;j>i;j--) {
+				if(min<nums[j]&&nums[j]<nums[i]) {//若出现132则返回
+					return true;
+				}
+			}
+		}
+		return false;
     }
 };
 ```
