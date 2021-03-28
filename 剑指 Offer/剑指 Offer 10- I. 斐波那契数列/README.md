@@ -64,3 +64,21 @@ public:
     }
 };
 ```
+```Java
+class Solution {
+    public int fib(int n) {
+        if(n<2) return n;
+		//初始化fib（0）和fib（1）
+		int pre = 0,next = 1;
+		for(int i=2;i<=n;i++) {
+			int temp = (pre+next)%1000000007;
+			//把next重新设为pre，开始累加
+			pre = next;
+			//把当前fib（n）设为next
+			next = temp;
+		}
+		//返回next，即fib（n）
+		return next;
+    }
+}
+```
