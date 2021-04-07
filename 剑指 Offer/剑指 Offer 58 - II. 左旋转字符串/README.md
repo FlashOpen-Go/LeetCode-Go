@@ -33,3 +33,12 @@ class Solution {
 	}
 };
 ```
+#### Python3
+```python
+class Solution:
+    def reverseLeftWords(self, s: str, n: int) -> str:
+        if 1 <= n < len(s): # 判断数值是否符合翻转要求
+            return s[n:] + s[:n]    # 切片处理
+        else:
+            return 'n值不符合要求'
+```
