@@ -31,3 +31,16 @@ class Solution {
     }
 };
 ```
+#### Python3
+```python
+class Solution:
+    def printNumbers(self, n: int) -> List[int]:
+        List = []
+        if isinstance(n,int) and n > 0:
+            max_num = 10**n
+            for i in range(1, max_num):
+                List.append(i)
+            return List
+        else:
+            return 'n值不符合要求'
+```
