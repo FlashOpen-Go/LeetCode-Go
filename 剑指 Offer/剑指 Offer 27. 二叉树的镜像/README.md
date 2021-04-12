@@ -51,3 +51,14 @@ class Solution {
     }
 };
 ```
+
+#### Python
+```python
+class Solution:
+    def mirrorTree(self, root: TreeNode) -> TreeNode:
+        if not root:
+            return root
+        # a, b = b, a
+        root.left, root.right = self.mirrorTree(root.right), self.mirrorTree(root.left)
+        return root
+```
