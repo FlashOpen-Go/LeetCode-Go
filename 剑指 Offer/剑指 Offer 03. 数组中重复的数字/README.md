@@ -41,7 +41,7 @@ public:
     }
 };
 ```
-
+#### Java
 ```Java
 class Solution {
     public int findRepeatNumber(int[] nums) {
@@ -57,4 +57,14 @@ class Solution {
 		return 0;
     }
 };
+```
+#### Python3
+```python
+class Solution:
+    def findRepeatNumber(self, nums: List[int]) -> int:
+        dic = set()
+        for i in nums:
+            if i in dic: return i
+            dic.add(i)
+        return -1
 ```
