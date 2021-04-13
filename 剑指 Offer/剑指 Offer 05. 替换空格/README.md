@@ -81,3 +81,9 @@ public:
     }
 };
 ```
+#### Python3
+```python
+class Solution:
+    def replaceSpace(self, s: str) -> str:
+        return s.replace(' ', '%20')    # 有替换方法直接替换字符串的指定内容
+```
