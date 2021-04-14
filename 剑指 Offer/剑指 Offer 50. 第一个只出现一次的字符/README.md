@@ -41,3 +41,14 @@ public:
     }
 };
 ```
+#### Python3
+```python
+class Solution:
+    def firstUniqChar(self, s: str) -> str:
+        dic = {}
+        for i in s:
+            dic[i] = not i in dic
+        for i in s:
+            if dic[i]: return i
+        return ' '
+```
