@@ -46,6 +46,7 @@ public:
     }
 };
 ```
+#### Java
 ```Java
 class Solution {
     public int[] exchange(int[] nums) {
@@ -72,4 +73,15 @@ class Solution {
 		return nums;
     }
 };
+```
+#### Python3
+```python
+class Solution:
+    def exchange(self, nums: List[int]) -> List[int]:
+        a, b = [], []
+        if not nums: return nums
+        for i in nums:
+            if i % 2 == 1: a.append(i)
+            else: b.append(i)
+        return a + b
 ```
