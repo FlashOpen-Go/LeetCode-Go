@@ -52,3 +52,17 @@ public:
     }
 };
 ```
+#### Python3
+```python
+class Solution:
+    def isStraight(self, nums: List[int]) -> bool:
+        List1 = []
+        a, b = 0, 14
+        for i in nums:
+            if i == 0: continue
+            a = max(a, i)
+            b = min(b, i)
+            if i in List1: return False
+            List1.append(i)
+        return a - b < 5
+```
