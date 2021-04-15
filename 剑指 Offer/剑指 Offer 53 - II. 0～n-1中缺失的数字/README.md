@@ -38,3 +38,16 @@ public:
     }
 };
 ```
+#### Python3
+```python
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        sum1 = 0
+        if not 0 in nums: return 0 
+        for i in nums: sum1 += i
+        sum2 = n * (n+1) / 2
+        a = int(sum2-sum1)  # 求和根据差值获取缺失的数
+        if a in nums: return n
+        return a
+```
