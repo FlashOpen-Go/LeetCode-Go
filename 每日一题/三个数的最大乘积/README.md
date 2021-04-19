@@ -49,4 +49,12 @@ public class MaxNum {
 	}
 }
 ```
-
+#### Python3
+```python
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        nums.sort()     # 数组进行升序排列
+        a = nums[-1] * nums[-2] * nums[-3]  # 排序后最后三个数最大
+        b = nums[0] * nums[1] * nums[-1]    # - - + 的情况
+        return max(a, b)
+```
