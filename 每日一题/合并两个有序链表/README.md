@@ -32,24 +32,18 @@
 ## 代码实现
 ```Java
 class Solution {
-    public String longestPalindrome(String s) {
-        String ret = "";
-		for(int i=0;i<s.toCharArray().length;i++) {
-            //要么时以i为中心回文，要么是一i和i+1为中心回文，取最长值
-			String myStr = getLenStr(s,i,i);
-			String broStr = getLenStr(s, i, i+1);
-			String str = myStr.length()>broStr.length()?myStr:broStr;
-			ret = str.length()>ret.length()?str:ret;
-		}
-		return ret;
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
+        } else if (l2 == null) {
+            return l1;
+        } else if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
     }
-    public String getLenStr(String s,int left,int right) {
-		while(left>0&&right<s.length()&&s.charAt(left-1)==s.charAt(right)) {
-			left--;
-			right++;
-		}
-        //当s.charAt(left-1)！=s.charAt(right)就不是回文所以返回
-		return s.substring(left,right);
-	}
 };
 ```
