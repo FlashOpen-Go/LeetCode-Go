@@ -38,7 +38,8 @@
 
 ### 解析
  - 求出a和b的最小值以及最大值，然后双指针救出a和b的值
-
+### 方法2：遍历开方
+- 使用long型防止溢出，一次计算，判断是否存在
 
 
 ## 代码实现
@@ -58,6 +59,22 @@ class Solution {
 			}
 		}
 		return false;
+    }
+};
+```
+
+### 方法2：遍历开方
+```C++
+class Solution {
+public:
+    bool judgeSquareSum(int c) {
+        for (long a = 0; a * a <= c; a++)
+        {
+            double b = sqrt(c - a * a);
+            if (b == (int)b)
+                return true;
+        }
+        return false;
     }
 };
 ```
