@@ -60,3 +60,17 @@ public:
     }
 };
 ```
+#### Java
+```Java
+class Solution {
+    public int xorOperation(int n, int start) {
+        int sum=0;
+		int i=start;
+		for(int m=0;m<n;m++) {
+			sum = sum^i;
+			i=i+2;
+		}
+		return sum;
+    }
+};
+```
