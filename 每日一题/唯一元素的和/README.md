@@ -45,3 +45,21 @@ class Solution:
                 res += j
         return res
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    int sumOfUnique(vector<int>& nums) {
+        vector<int>array(101, 0);
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++)
+            array[nums[i]]++;
+        for (int i = 0; i < array.size(); i++)
+        {
+            if (array[i] == 1)
+                sum += i;
+        }
+        return sum;
+    }
+};
+```
