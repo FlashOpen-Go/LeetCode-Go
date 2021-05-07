@@ -1,13 +1,22 @@
 # LeetCode 刷题记录
 ## 分类
 ### 二维数组
+<details>
+<summary>展开</summary>
+<pre><code>
 - 对角线遍历
 - 旋转图像
 - 有效的数独
 - 转置矩阵
 - 零矩阵
+</code></pre>
+</details>
 
 ### 剑指 Offer
+<details>
+<summary>展开</summary>
+<pre><code>
+
 - 剑指 Offer 03. 数组中重复的数字
 - 剑指 Offer 04. 二维数组中的查找
 - 剑指 Offer 05. 替换空格
@@ -42,28 +51,59 @@
 - 剑指 Offer 66. 构建乘积数组
 - 剑指 Offer 67. 把字符串转换成整数
 
+</code></pre>
+</details>
+
 ### 动态规划
+<details>
+<summary>展开</summary>
+<pre><code>
 - 70 爬楼梯
+</code></pre>
+</details>
 
 ### 回溯算法
+<details>
+<summary>展开</summary>
+<pre><code>
 - 17 电话号码的字母组合
+</code></pre>
+</details>
 
 ### 字符串
+<details>
+<summary>展开</summary>
+<pre><code>
 - 最后一个单词的长度
 - 最长公共前缀
 - 罗马数字转整数
+</code></pre>
+</details>
 
 ### 数据库
+<details>
+<summary>展开</summary>
+<pre><code>
 - 182 查找重复的电子邮箱
 - 595 大的国家
 - 596 超过5名学生的课
 - 627 变更性别
+</code></pre>
+</details>
 
 ### 数据结构
+<details>
+<summary>展开</summary>
+<pre><code>
 - 有效的括号
 - 链表
+</code></pre>
+</details>
 
 ### 数组
+<details>
+<summary>展开</summary>
+<pre><code>
 - 两个数组的交集 II
 - 主要元素
 - 删除排序数组中的重复项
@@ -76,8 +116,13 @@
 - 有序数组的平方
 - 盛最多水的容器
 - 移除元素
+</code></pre>
+</details>
 
 ### 每日一题
+<details>
+<summary>展开</summary>
+<pre><code>
 - 132 模式
 - 154 寻找旋转排序数组中的最小值 II
 - 22 括号生成
@@ -140,8 +185,13 @@
 - 解码异或后的数组
 - 重新排列数组
 - 数组异或操作
+</code></pre>
+</details>
 
 ### 程序员面试今典
+<details>
+<summary>展开</summary>
+<pre><code>
 - 面试题 01.01. 判定字符是否唯一
 - 面试题 01.02. 判定是否互为字符重排
 - 面试题 01.03. URL化
@@ -156,3 +206,5 @@
 - 面试题 02.07. 链表相交
 - 面试题 03.01. 三合一
 - 面试题 03.02. 栈的最小值
+</code></pre>
+</details>
