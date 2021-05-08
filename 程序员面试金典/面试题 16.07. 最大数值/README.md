@@ -17,3 +17,15 @@ class Solution:
     def maximum(self, a: int, b: int) -> int:
         return int((math.fabs(a-b) + a + b)/2)
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    int maximum(int a, int b) {
+        long value_a = a;
+        long value_b = b;
+        int k = 1 + ((value_a - value_b) >> 63);
+        return a * k + (!k) * b;
+    }
+};
+```
