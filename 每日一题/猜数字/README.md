@@ -36,3 +36,15 @@ class Solution:
                 a += 1
         return a
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    int game(vector<int>& guess, vector<int>& answer) {
+        int ret = 0;
+        for (int i = 0; i < guess.size(); i++)
+            ret += guess[i] == answer[i] ? 1 : 0;
+        return ret;
+    }
+};
+```
