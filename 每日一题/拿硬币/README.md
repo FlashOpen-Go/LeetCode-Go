@@ -30,3 +30,15 @@ class Solution:
             else: a += i//2 + 1
         return a
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    int minCount(vector<int>& coins) {
+        int ret = 0;
+        for (int value : coins)
+            ret += (int)(value/2) + (value % 2) ;
+        return ret;
+    }
+};
+```
