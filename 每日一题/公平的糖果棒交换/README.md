@@ -54,3 +54,34 @@ class Solution:
                 break
         return ans
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    vector<int> fairCandySwap(vector<int>& A, vector<int>& B) {
+        vector<int> ret;
+        int Taget_Value = (accumulate(A.begin(), A.end(), 0) - accumulate(B.begin(), B.end(), 0) ) / 2;
+        int A_head = 0;
+        int B_head = 0;
+        sort(A.begin(), A.end());
+        sort(B.begin(), B.end());
+        while(A_head < A.size() && B_head < B.size())
+        {
+            if (A[A_head] - B[B_head] == Taget_Value)
+            {
+                ret = vector<int>{A[A_head], B[B_head]};
+                break;
+            }
+            else if (A[A_head] - B[B_head] > Taget_Value)
+            {
+                B_head++;
+            }
+            else
+            {
+                A_head++;
+            }
+        }
+        return ret;
+    }
+};
+```
