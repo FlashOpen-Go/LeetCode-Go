@@ -45,3 +45,20 @@ class Solution:
     def numWaterBottles(self, numBottles: int, numExchange: int) -> int:
         return numBottles if numExchange > numBottles else (numBottles - numExchange) // (numExchange - 1) + 1 + numBottles
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    int numWaterBottles(int numBottles, int numExchange) {
+        int ret = numBottles;
+        while(numBottles >= numExchange)
+        {
+            int temp = numBottles / numExchange;
+            ret += temp;
+            numBottles %= numExchange;
+            numBottles += temp;
+        }
+        return ret;
+    }
+};
+```
