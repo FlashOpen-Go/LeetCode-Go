@@ -38,3 +38,12 @@ class Solution:
     def canWinNim(self, n: int) -> bool:
         return n % 4 != 0
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    bool canWinNim(int n) {
+        return (n % 4 != 0);
+    }
+};
+```
