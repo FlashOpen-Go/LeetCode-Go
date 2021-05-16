@@ -29,6 +29,10 @@
 - 1 <= words[i].length <= 100
 - words[i] 由英文字母（小写和大写字母）组成
 
+## 解析
+#### CPP实现
+- 创建数组记录每个字符出现的行号，之后依次遍历每个字符串，判断行号是否唯一
+
 ## 代码实现
 #### Python3
 ```python
@@ -44,4 +48,34 @@ class Solution:
             if setx <= set1 or setx <= set2 or setx <= set3:
                 res.append(i)
         return res
+```
+
+#### CPP
+```C++
+class Solution {
+public:
+    vector<string> findWords(vector<string>& words) {
+        vector<int> array ={2, 3, 3, 2, 1, 2, 2, 2, 1, 2, 2, 2, 3, 3, 1, 1, 1, 1, 2, 1, 1, 3, 1, 3, 1, 3};
+        vector<string> ret;
+        for (string s : words)
+        {
+            int temp = 0;
+            bool flag = true;
+            string temp_str = s;
+            transform(temp_str.begin(), temp_str.end(), temp_str.begin(), ::toupper);
+            temp = array[(temp_str[0] - 'A')];
+            for (char c : temp_str)
+            {
+                if (array[(c - 'A')] != temp)
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag)
+                ret.push_back(s);
+        }
+        return ret;
+    }
+};
 ```
