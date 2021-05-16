@@ -40,3 +40,26 @@ class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
         return [len(list(filter(lambda x: x < i, nums))) for i in nums]
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+        vector<int> count_array(101, 0);    //创建元素数组
+        vector<int> ret;
+        for (int value : nums)  // 统计元素出现的次数
+        {
+            count_array[value]++;
+        }
+        for (int i = 1; i < count_array.size(); i++)    // 计算当前元素大于之前元素的个数
+        {
+            count_array[i] += count_array[i - 1];
+        }
+        for (int value : nums)  // 计算小于当前数字的数字个数
+        {
+            ret.push_back(value == 0 ? 0 : count_array[value - 1]);
+        }
+        return ret;
+    }
+};
+```
