@@ -63,3 +63,36 @@ class Solution:
             else: stack.append(int(i))
         return sum(stack)
 ```
+#### CPP 数组实现
+```C++
+class Solution {
+public:
+    int calPoints(vector<string>& ops) {
+        int ret = 0;
+        vector<int> m_value;
+        for (string c : ops)
+        {
+            int temp = 0;
+            if (c == "C")
+            {
+                m_value.pop_back();
+            }
+            else if (c == "D")
+            {
+                m_value.push_back(m_value[m_value.size() - 1] * 2);
+            }
+            else if (c == "+")
+            {
+                m_value.push_back(m_value[m_value.size() - 1] + m_value[m_value.size() - 2]);
+            }
+            else
+            {
+                m_value.push_back(stoi(c));
+            }
+        }
+        for (int value : m_value)
+            ret += value;
+        return ret;
+    }
+};
+```
