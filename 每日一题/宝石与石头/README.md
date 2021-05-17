@@ -27,3 +27,22 @@ class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         return sum(i in jewels for i in stones)
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        vector<int> array(100, 0);
+        int ret = 0;
+        for (char c : stones)
+        {
+            array[c - 'A']++;
+        }
+        for (char c : jewels)
+        {
+            ret += array[c - 'A'];
+        }
+        return ret;
+    }
+};
+```
