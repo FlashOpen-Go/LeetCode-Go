@@ -19,6 +19,8 @@
 ## 解析
 ### 方法1：位运算
 使用一个int类型的值来进行标记，每一个bit表示一个字母，遍历字符串判断对应bit是否为1
+### 方法2：判断出现位置
+判断当前元素第一次出现的位置是不是当前位置，如果是就出现一次，否则不止一次
 
 ## 代码实现
 ### 方法1：位运算
@@ -38,6 +40,20 @@ public:
                 bit |= (1 << move);
         }
         return true;
+    }
+};
+```
+### 方法2：判断当前元素第一次出现的位置是不是当前位置
+#### Java
+```Java
+class Solution {
+    public boolean isUnique(String astr) {
+        for(int i=0;i<astr.length();i++) {
+			if(i!=astr.indexOf(astr.charAt(i))) {
+				return false;
+			}
+		}
+		return true;
     }
 };
 ```
