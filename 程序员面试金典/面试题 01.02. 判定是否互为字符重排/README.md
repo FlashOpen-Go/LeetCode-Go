@@ -20,6 +20,8 @@
 ### 方法1：
 - 使用一个数组来记录S1中每一个元素出现的次数
 - 之后再遍历S2，对应字符位置自减，如果不出现小于0，则说明相同
+### 方法2：
+- 给两个字符串的字符数组排序，然后比较，不同返回false，否则返回true
 
 ## 代码实现
 ### 方法1：
@@ -40,6 +42,27 @@ public:
                 return false;
         }
         return true;
+    }
+};
+```
+### 方法2：
+#### Java
+```Java
+class Solution {
+    public boolean CheckPermutation(String s1, String s2) {
+        if(s1.length()!=s2.length()) {
+			return false;
+		}
+		char[] charArray = s1.toCharArray();
+		char[] charArray2 = s2.toCharArray();
+		Arrays.parallelSort(charArray);
+		Arrays.parallelSort(charArray2);
+		for(int i=0;i<charArray.length;i++) {
+			if(charArray[i]!=charArray2[i]) {
+				return false;
+			}
+		}
+		return true;
     }
 };
 ```
