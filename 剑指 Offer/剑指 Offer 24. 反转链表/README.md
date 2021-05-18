@@ -48,3 +48,31 @@ public:
     }
 };
 ```
+#### Java
+```Java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+		ListNode curr = head;
+		while(curr!=null) {
+            //临时存储下一个变量
+			ListNode tempNode = curr.next;
+            //当前变量指向前一个变量
+			curr.next = prev;
+             //将前一个变量后移
+			prev = curr;
+            //将当前变量后移
+			curr = tempNode;
+		}
+		return prev;
+    }
+};
+```
