@@ -47,3 +47,19 @@ class Solution:
             else: judge.append(False)
         return judge
 ```
+
+#### CPP
+```C++
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        vector<bool> ret;
+        int max_value = *max_element(candies.begin(), candies.end());
+        for (int value : candies)
+        {
+            ret.push_back((value + extraCandies) >= max_value ? true : false);
+        }
+        return ret;
+    }
+};
+```
