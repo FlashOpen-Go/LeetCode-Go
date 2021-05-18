@@ -43,3 +43,16 @@ class Solution:
     def average(self, salary: List[int]) -> float:
         return (sum(salary) - max(salary) - min(salary)) / (len(salary) - 2)
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    double average(vector<int>& salary) {
+        sort(salary.begin(), salary.end());
+        int ret = 0;
+        for (int i = 1; i < salary.size() - 1; i++)
+            ret += salary[i];
+        return (ret / (salary.size() - 2.0));
+    }
+};
+```
