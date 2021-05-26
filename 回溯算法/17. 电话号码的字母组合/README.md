@@ -71,3 +71,46 @@ class Solution {
 	}
 };
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    vector<string> letterCombinations(string digits) {
+        vector<string> ret;
+        if (digits.length() == 0)
+            return ret;
+        unordered_map<char, string> numberMap{
+            {'2', "abc"},
+            {'3', "def"},
+            {'4', "ghi"},
+            {'5', "jkl"},
+            {'6', "mno"},
+            {'7', "pqrs"},
+            {'8', "tuv"},
+            {'9', "wxyz"}
+        };
+        string str;
+        backtrack(ret, numberMap, digits, 0, str);
+        return ret;
+    }
+    void backtrack(vector<string>& ret, const unordered_map<char, string> numberMap, const string digits, int index, string& str)
+    {
+		// 提供的数字字符串的长度表示树的深度
+        if (index == digits.length())
+        {
+            ret.push_back(str);	// 到了叶子节点，进行添加
+        }
+        else
+        {
+            char num = digits[index];	// 取当前的数字
+            string num_str = numberMap.at(num);	//	取数字表示的字母
+            for (char c : num_str)
+            {
+                str.push_back(c);	//	进入该节点
+                backtrack(ret, numberMap, digits, index + 1, str);	//
+                str.pop_back();	// 退回到上一个节点
+            }
+        }
+    }
+};
+```
