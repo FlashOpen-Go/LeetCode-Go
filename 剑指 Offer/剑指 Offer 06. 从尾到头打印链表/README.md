@@ -44,3 +44,13 @@ class Solution {
     }
 };
 ```
+#### Python3
+```python
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        a = []
+        while head:
+            a.append(head.val)
+            head = head.next
+        return a[::-1]
+```
