@@ -82,3 +82,12 @@ class Solution {
     }
 }
 ```
+#### Python3
+```python
+class Solution:
+    def fib(self, n: int) -> int:
+        a, b = 0, 1
+        for _ in range(n):      # 单下划线代表一个临时值，作为一个占位符变量
+            a, b = b, a + b
+        return a % 1000000007
+```
