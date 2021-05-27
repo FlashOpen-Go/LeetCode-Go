@@ -72,3 +72,35 @@ class Solution {
 	}
 };
 ```
+#### CPP
+```C++
+class Solution {
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>> ret;
+        vector<int> array;
+        backtrack(candidates, array, target, ret, 0);
+        return ret;
+    }
+    void backtrack(vector<int>& candidates, vector<int>array, int target, vector<vector<int>>& ret_array, int index)
+    {
+        if ( 0 == target)
+        {
+            ret_array.push_back(array);
+            return;
+        }
+        else if (target < 0)
+        {
+            return;
+        }
+        for (int i = index; i < candidates.size(); i++)
+        {
+            array.push_back(candidates[i]);
+			// 每次每一次都是从i开始，这样可以避免重复
+            backtrack(candidates, array, target - candidates[i], ret_array, i);
+            array.pop_back();
+        }
+    }
+
+};
+```
