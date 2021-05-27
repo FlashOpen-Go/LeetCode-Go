@@ -76,3 +76,42 @@ class Solution {
 	}
 };
 ```
+
+#### CPP
+```C++
+class Solution {
+public:
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        vector<vector<int>> ret;
+        vector<int> array;
+        sort(candidates.begin(), candidates.end());
+        backtrack(candidates, array, ret, target, 0);
+        return ret;
+    }
+
+    void backtrack(vector<int> candidates, vector<int> array, vector<vector<int>>& ret_array, int target, int index)
+    {
+        if (target == 0)
+        {
+            ret_array.push_back(array);
+            return ;
+        }
+        else if (target < 0)
+        {
+            return ;
+        }
+
+        for (int i = index; i < candidates.size(); i++)
+        {
+            if (candidates[i] <= target)
+            {
+                if (i > index && candidates[i] == candidates[i - 1])
+                    continue;
+            }
+            array.push_back(candidates[i]);
+            backtrack(candidates, array, ret_array, target - candidates[i], i + 1);
+            array.pop_back();
+        }
+    }
+};
+```
