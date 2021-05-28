@@ -60,3 +60,18 @@ public:
     }
 };
 ```
+#### Python3
+```python
+class Solution:
+    def removeDuplicateNodes(self, head: ListNode) -> ListNode:
+        val_set=set()   # 利用set保存不重复的节点
+        prev=ListNode(-1)
+        prev.next=head
+        while prev.next:
+            if prev.next.val in val_set:
+                prev.next=prev.next.next
+            else:
+                val_set.add(prev.next.val)
+                prev=prev.next
+        return head
+```
