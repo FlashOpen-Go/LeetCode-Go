@@ -47,3 +47,30 @@ class Solution {
 	}
 };
 ```
+
+#### CPP
+```C++
+class Solution {
+public:
+    vector<vector<int>> combine(int n, int k) {
+        vector<vector<int>> ret;
+        vector<int> array;
+        backtrack(n, k, ret, array, 1);
+        return ret;
+    }
+    
+    void backtrack(int n, int k, vector<vector<int>>& ret, vector<int> array, int index)
+    {
+        if (array.size() == k)
+        {
+            ret.push_back(array);
+        }
+        for (int i = index; i <= n; i++)
+        {
+            array.push_back(i);
+            backtrack(n , k, ret, array, i + 1);
+            array.pop_back();
+        }
+    }
+};
+```
