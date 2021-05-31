@@ -59,6 +59,7 @@
 | 组合总和 | | | Y |
 | 组合总和II | | | Y |
 | 组合 | | | Y |
+| 全排列 | | | Y |
 
 ### 字符串
 | 题目名称 | goldhadis | Toetoise | FlashOpen-Go |
