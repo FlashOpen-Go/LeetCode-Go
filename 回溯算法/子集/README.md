@@ -50,3 +50,26 @@ class Solution {
 	}
 };
 ```
+
+#### CPP
+```C++
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> ret;
+        vector<int> array;
+        backtrack(nums, ret, array, 0);
+        return ret;
+    }
+    void backtrack(vector<int>nums, vector<vector<int>>& ret, vector<int> array, int index)
+    {
+        ret.push_back(array);
+        for (int i = index; i < nums.size(); i++)
+        {
+            array.push_back(nums[i]);
+            backtrack(nums, ret, array, i + 1);
+            array.pop_back();
+        }
+    }
+};
+```
