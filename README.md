@@ -61,6 +61,7 @@
 | 组合 | | | Y |
 | 全排列 | | | Y |
 | 子集 | | | Y |
+| 全排列 II | | | Y |
 
 ### 字符串
 | 题目名称 | goldhadis | Toetoise | FlashOpen-Go |
