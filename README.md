@@ -99,6 +99,7 @@
 | 有序数组的平方 | Y | Y | Y |
 | 盛最多水的容器 | Y | Y | Y |
 | 移除元素 | Y | Y | Y |
+| 最大连续1的个数 |  |  | Y |
 
 ### 每日一题
 | 题目名称 | goldhadis | Toetoise | FlashOpen-Go |
