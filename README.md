@@ -27,6 +27,7 @@
 | 剑指 Offer 27. 二叉树的镜像 | Y | Y | Y |
 | 剑指 Offer 29. 顺时针打印矩阵 | Y | Y | Y |
 | 剑指 Offer 32 - I. 从上到下打印二叉树 | Y | Y | Y |
+| 剑指 Offer 38. 字符串的排列 | | | Y |
 | 剑指 Offer 39. 数组中出现次数超过一半的数字 | Y | Y | Y |
 | 剑指 Offer 40. 最小的k个数 | Y | Y | Y |
 | 剑指 Offer 42. 连续子数组的最大和 | Y | Y | Y |
@@ -62,6 +63,7 @@
 | 全排列 | | | Y |
 | 子集 | | | Y |
 | 全排列 II | | | Y |
+| 剑指 Offer 38. 字符串的排列 | | | Y |
 
 ### 字符串
 | 题目名称 | goldhadis | Toetoise | FlashOpen-Go |
