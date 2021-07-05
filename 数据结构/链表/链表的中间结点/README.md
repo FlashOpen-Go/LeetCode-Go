@@ -23,9 +23,12 @@ ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, 以及 ans.next.next.next 
 ```
 
 ## 解析
+### (1)
 - 首先定义一个存储节点指针的数组
 - 遍历列表将每个节点存储数组中
 - 直接返回数组的中间元素即可
+### (2)
+ - 快慢指针，快指针走两步，慢指针走一步，等到快指针走结束时返回慢指针
 
 ## 代码实现
 ```C++
@@ -48,6 +51,29 @@ public:
             p = p->next;
         }
         return array[array.size() / 2];
+    }
+};
+```
+```Java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode p = head;
+		ListNode q = head;
+		while(q!=null&&q.next!=null) {
+			p = p.next;
+			q = q.next.next;
+		}
+		return p;
     }
 };
 ```
