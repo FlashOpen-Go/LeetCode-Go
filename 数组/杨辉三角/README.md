@@ -46,3 +46,28 @@ public:
     }
 };
 ```
+#### Java
+```java
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        int[][] dp = new int[numRows][numRows];
+		dp[0][0]=1;
+		List<List<Integer>> res = new LinkedList<>();
+		for(int i=0;i<numRows;i++) {
+			List<Integer> list = new LinkedList<Integer>();
+			for(int j=0;j<=i;j++) {
+				if(j==0||j==i) {
+					dp[i][j] = 1;
+				}else {
+					dp[i][j] = dp[i-1][j-1]+dp[i-1][j];
+				}
+				if(dp[i][j]!=0) {
+					list.add(dp[i][j]);
+				}
+			}
+            res.add(list);
+		}
+		return res;
+    }
+}
+```
