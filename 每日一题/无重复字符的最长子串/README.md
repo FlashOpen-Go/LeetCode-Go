@@ -37,7 +37,7 @@
 
 ### 解析
  - 滑动窗口，初始化一个i和j
- - 当出现重复时，i右移，否则j右移，知道j滑动到最有百年为止，返回最大值
+ - 当出现重复时，i右移，否则j右移，直到j滑动到数组边界为止，返回最大值
 
 
 
@@ -60,6 +60,36 @@ class Solution {
 			}
 		}
 		return Math.max(count, j-i-1);
+    }
+};
+```
+```C++
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int ret = INT_MIN;
+        if (s.length() < 2)
+            return s.length();
+        int left = 0;
+        int right = 1;
+        unordered_set<char> set;
+        set.insert(s[left]);
+        while(right < s.length())
+        {
+            if (set.count(s[right]) > 0)
+            {
+                ret = max( right - left, ret);
+                // cout << ret << endl;
+                while(right >= left && set.count(s[right]) > 0)
+                {
+                    set.erase(s[left++]);
+                }
+            }
+            set.insert(s[right]);
+            right++;
+        }
+        ret = max( right - left, ret);
+        return ret == INT_MIN ? 0 : ret;
     }
 };
 ```
