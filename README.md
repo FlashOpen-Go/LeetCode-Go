@@ -1,4 +1,4 @@
-# LeetCode 刷题记录2
+# LeetCode 刷题记录
 ## 分类
 ### 二维数组
 | 题目名称 | goldhadis | Toetoise | FlashOpen-Go |
