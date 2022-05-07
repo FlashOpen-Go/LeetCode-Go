@@ -87,3 +87,20 @@ class Solution:
     def replaceSpace(self, s: str) -> str:
         return s.replace(' ', '%20')    # 有替换方法直接替换字符串的指定内容
 ```
+
+### Java
+```Java
+class Solution {
+    public String replaceSpace(String s) {
+        StringBuilder sb = new StringBuilder();
+		for(int i=0;i<s.length();i++) {
+			if(' '==s.charAt(i)) {
+				sb.append("%20");
+			}else {
+				sb.append(s.charAt(i));
+			}
+		}
+		return sb.toString();
+    }
+};
+```
