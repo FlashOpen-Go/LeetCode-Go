@@ -46,3 +46,24 @@ public:
     }
 };
 ```
+
+#### Java
+```Java
+class Solution {
+    public boolean canPermutePalindrome(String s) {
+        int[] arr = new int[128];
+        for(int i=0;i<s.length();i++){
+            arr[s.charAt(i)]+=1;
+        }
+        int count=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2==1){
+                if(++count>1){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+};
+```
